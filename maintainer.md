@@ -1,6 +1,6 @@
 ---
 layout: page
-title: New Maintainer Needed
+title: No Maintainer
 ---
 
 by @fommil  
@@ -22,11 +22,11 @@ generate enough revenue to pay somebody to take this role. But even
 with the exceptionally generous donations from our core userbase, our
 funds are orders of magnitude lower than necessary.
 
-ENSIME still needs a maintainer who is able to do the basic job of
-assigning authority roles (such as merge rights, publishing to
-Sonatype), cutting stable releases of the various components, keeping
-the servers ticking and taking responsibility for code / build
-quality.
+ENSIME needs people who are able to do the basic job of assigning
+authority roles (such as merge rights, publishing to Sonatype),
+cutting stable releases of the various components, keeping the servers
+ticking and taking responsibility for code / build quality (i.e. code
+reviews and merging).
 
 The ENSIME contributor base is absolutely fantastic and it is a
 genuine pleasure to hack with the great people who come through these
@@ -48,9 +48,8 @@ That said, there are a lot of additional burdens that you, as the
 future maintainer, will have thrust upon you unless you actively
 identify the lures and choose not to get involved.
 
-In the interests of being completely open, this is some of what you
-can expect and if I was to do it again, you can probably guess what
-I'd have done:
+In the interests of being honest, this is some of what you can expect
+as a Free Software maintainer:
 
 1. keeping a mental picture of the overall project: server, all build
    tool plugins and all editor plugins. You will be expected to have a
@@ -89,32 +88,41 @@ I'd have done:
 1. keeping the documentation up to date on the website. Be prepared
    for lots of passive aggressive insults if there is even a single
    sentence that is wrong or it didn't make sense to somebody who just
-   skims it. Don't be afraid to point out that `[edit]` button that I
-   added to every single page.
-1. being available 24/7 to spoon feed your documentation to random
-   dudes on the internet who feel like you owe them something, and
-   don't know how to use a browser. If you don't decorate your advice
-   with salutations and graciously thanking them for trying out
-   ENSIME, be prepared to be called arrogant, lazy and rude. My advice
-   is to shut these people out of the project and not to tolerate
-   them, but you **will** be ostracised by other groups in the scala
-   ecosystem who wish to encourage such privileged behaviour. You will
-   need thick skin to deal with both of these types of people.
+   skims it. Don't be afraid to point out the `[edit]` button that I
+   added to *every single page*.
+1. there is a minority of random dudes on the internet who believe you
+   owe them something: they believe themselves to be The Customer and
+   are therefore Always Right. Be prepared for the expectation that
+   you are available 24/7 to spoon feed your documentation to them,
+   and that you shouldn't close their "bug reports" even though its
+   covered in the Troubleshooting Guide and they ignored the template
+   (which asks for information that you absolutely need to help them).
+   If you don't decorate your advice with salutations and graciously
+   thank them for trying out ENSIME, be prepared to be called
+   arrogant, lazy and rude. They seem to expect to be treated like a
+   coffee shop customer and genuinely believe they are helping you by
+   using your software. My advice is to continue making it clear that
+   ENSIME is about empowering hackers who wish to control their tools,
+   and shut these "customers" out of the project if they turn nasty
+   and not to tolerate them, but you **will** be ostracised by other
+   groups in the Scala ecosystem who wish to encourage privileged
+   behaviour. They will call you toxic. You will need thick skin to
+   deal with both of these types of people.
 1. having a Code of Conduct. If you do not have one, you will be
    pressured by people until you put one in place. Their primary
    weapon is emotional blackmail, they will claim that you are
    excluding people until you put *their* code of conduct in place.
-   They will exclude you from the social gang until you agree with
-   them. You're between a rock and a hard place: no matter what you
-   do, there will always be somebody who complains about it, for
-   example, it seems we now need to have a stance on ["actual
-   Nazis"](https://github.com/typelevel/general/issues/74), and you
-   need to prove your commitment to the cause by punching a Nazi, or
-   something. This is why [we have a simple code of conduct](/conduct)
-   which asserts that users should be respectful of the contributors'
-   time and help each other out. ENSIME is a technical project and the
-   only politics we subscribe to are those of the Free Software
-   Foundation.
+   They will exclude you from their social gang / old-boys-club until
+   you agree with them. You're between a rock and a hard place: no
+   matter what you do, there will always be somebody who complains
+   about it. For example, it seems we need to have a stance on
+   ["actual Nazis"](https://github.com/typelevel/general/issues/74),
+   and you need to prove your commitment to the cause by punching a
+   Nazi, or something. This is why [we have a simple code of
+   conduct](/conduct) which asserts that users should be respectful of
+   the contributors' time and help each other out. ENSIME is a
+   technical project and the only politics we subscribe to are those
+   of the Free Software Foundation.
 1. managing the sponsorship programme and the cash funds available
    there. We are currently generating about $350 / month, which means
    we can afford to hire a part time student for two months a year. By
@@ -137,12 +145,16 @@ I'd have done:
    contribute the funds and effort to keep the Windows build running,
    unless the gratis AppVeyor service has improved in the last two
    years (which you will need to spend a weekend investigating). I
-   will try to move us over to gitlab before my tenure is up so that
-   the CI cost is removed, but we will still be reliant on Chip's
-   machine doing the work.
+   moved us over entirely to Chip's machine for GNU / Linux CI.
 
 Applicants need not apply, I will grant admin permissions to some core
 contributors over the coming months and somebody will eventually step
 up out of necessity. There will be no handover, you will (re)discover
 and (re)invent everything as you need it, much as the incumbent earned
 his scars.
+
+Frankly, I wouldn't wish the burden of Free Software maintenance on
+anybody. It's too much abuse, and the politics are painful. We are all
+the maintainers now:
+
+![V](https://musicboxtheatre.com/sites/default/files/styles/movie_stills/public/movie-stills/v-for-vendetta/v-for-vendetta-decade-wachowskis-dark-knight-anonymous.jpeg?itok=mYUrPkMe)
