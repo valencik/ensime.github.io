@@ -106,7 +106,7 @@ We have several styles of tests: unit tests, in-memory source tests (e.g. [`Rich
 
 ### Guidelines
 
-We do not have any official style guide. Code formatting is enforced by scalariform. When in doubt, prefer functional idioms encouraged by [Typelevel](http://typelevel.org) such as referential transparency, [typeclass derivation](https://github.com/fommil/shapeless-for-mortals) and immutable data structures. We made a huge mistake depending on akka and we would like to [fix that by replacing it](https://github.com/ensime/ensime-server/issues/1351).
+We do not have any official style guide. Code formatting is enforced by scalariform. When in doubt, prefer functional idioms encouraged by [Typelevel](http://typelevel.org) such as referential transparency, typeclass derivation and immutable data structures. We made a huge mistake depending on akka and we would like to [fix that by replacing it](https://github.com/ensime/ensime-server/issues/1351).
 
 Note that many functional styles of programming [introduce huge memory overheads](https://skillsmatter.com/skillscasts/6939-optimising-scala-for-fun-and-profit) and we have several critical paths where we cannot afford to trade style over performance. We encourage *locally scoped* mutability if it improves performance and / or readability. We integrate with several heavily mutable external systems, such as the ASM classpath visitor, file systems, databases and the compiler APIs, so we try to be pragmatic.
 
