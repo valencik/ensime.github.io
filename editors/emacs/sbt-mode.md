@@ -35,6 +35,10 @@ You might also want to customize some `sbt-mode` variables (run `M-x customize-m
 
 For example you can play with variable `sbt:scroll-to-bottom-on-output`. If set to `t` (which is a default value) sbt output buffer scrolls automatically to the last line if there is some new output. Setting this variable to `nil` will cause point remain on it's current position in a buffer when there is some new output. If set to `nil` and point is on the last line, it scrolls automaticaly with new output, but if there is compilation error (line beginning `[error] - ...`) it will stop on that line.
 
+## sbt 1.0
+
+Although sbt 1.0 is supported, [there are some niggles](https://github.com/ensime/emacs-sbt-mode/issues/125).
+
 ## Related Customizations
 
 To work efficiently with `sbt-mode`, you may wish to customise your workflow with the built-in Emacs compile support:

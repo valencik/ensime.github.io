@@ -18,7 +18,7 @@ The integration of ENSIME with [sbt](http://github.com/sbt/sbt) is provided by [
 
 Therefore it is recommended to install it as a [global plugin](http://www.scala-sbt.org/0.13/docs/Using-Plugins.html) so that it's always available.
 
-To do so, add it to `~/.sbt/0.13/plugins/plugins.sbt` (create if necessary) as such:
+To do so, add it to `~/.sbt/1.0/plugins/plugins.sbt` (create if necessary) as such:
 
 ```scala
 addSbtPlugin("org.ensime" % "sbt-ensime" % "2.0.1")
@@ -28,9 +28,9 @@ Then in order to create the `.ensime` file for you project, start `sbt` (in the 
 
 ### Common Mistakes
 
-1. If you accidentally use `~/.sbt/0.13/plugins.sbt` instead of `~/.sbt/0.13/plugins/plugins.sbt` you'll get an sbt resolution error - make sure you're defining the plugin at the right path.
+1. If you accidentally use `~/.sbt/1.0/plugins.sbt` instead of `~/.sbt/1.0/plugins/plugins.sbt` you'll get an sbt resolution error - make sure you're defining the plugin in the right place.
 
-2. If your project is using sbt 1 you'll also get `unresolved dependency` or `command not found` error messages, make sure that the sbt version in `project/build.properties` is `0.13.16`. See [ensime/ensime-sbt#237][] for more information, to track progress and to get involved in adding sbt 1 compatibility to [sbt-ensime][].
+1. Use `~/.sbt/0.13/plugins/plugins.sbt` if you are using the older sbt 0.13
 
 ### Unstable Server
 
