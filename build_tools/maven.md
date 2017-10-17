@@ -58,6 +58,19 @@ The default ensime server version is 2.0.0-M4, but you can customize it like:
 </configuration>
 ```
 
+To detect the right Scala version, ensime-maven performs the following analysis:
+
+  - If ensimeScalaVersion property is explicitly set, use it
+  - If not, use the version explicitly declared as a <dependency> if it exists
+  - If not, use the version explicitly declared in <dependencyManagement>, if it exists
+  - If not, look at transitive dependencies
+  - If there are one or more transitive dependencies, and they are all the same version, use that
+  - If there is more than one transitive dependency, and they are the same major version, use the
+    highest minor version present for that major version, and log a warning
+  - If there are different major versions, use the lowest major version, with highest minor
+    version of that major version, and log a warning
+  - Use the default, and log a warning
+
 ## Generate `.ensime` file
 
 To actually generate the `.ensime` file from your pom, run:
@@ -81,7 +94,7 @@ You can customize it by passing the `salariform` settings to this plugin's `conf
 <plugin>
   <groupId>org.ensime.maven.plugins</groupId>
   <artifactId>ensime-maven</artifactId>
-  <version>1.2.0</version>
+  <version>1.3.0</version>
   <configuration>
     <indentSpaces>2</indentSpaces>
   </configuration>
@@ -100,7 +113,7 @@ mvn -Dgpg.skip install
 Then run it with:
 
 ```
-mvn org.ensime.maven.plugins:ensime-maven:1.3.0-SNAPSHOT:generate
+mvn org.ensime.maven.plugins:ensime-maven:1.4.0-SNAPSHOT:generate
 ```
 
 (substituting the latest version number if necessary)
