@@ -15,6 +15,7 @@ The following major features have been implemented under the sponsorship program
 - [Scala 2.12 support](https://github.com/ensime/ensime-server/pull/1703)
 - [Analyzer per Project](https://github.com/ensime/ensime-server/pull/1807)
 - [rewrite sublime plugin](https://github.com/ensime/ensime-server/issues/1778)
+- [sbt 1.0 support](https://github.com/ensime/ensime-sbt/pull/360)
 
 with more in [the current roadmap](https://github.com/ensime/ensime-server/projects/3).
 
