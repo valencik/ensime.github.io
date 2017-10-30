@@ -18,17 +18,33 @@ If you're using Ubuntu, as of 16.04, default Vim doesn't have Python configured.
    ```
    $ pip install neovim
    ```
+
+1. If you're using Neovim with [Nix][nix] you will need to override the default derivation to include
+   `websocket-client` and `sexpdata` since Nix-installed Neovim will not look in standard locations for Python packages.
+   One of your options for doing this is through [`packageOverrides`][nixPackageOverrides].
+
+   ```
+   {
+     packageOverrides = pkgs: rec {
+       neovim = with pkgs; neovim.override { extraPythonPackages = with pythonPackages; [ websocket_client sexpdata ]; };
+     };
+   }
+   ```
+
+   Once it's overridden make sure to re-install Neovim.
+
 1. Install the ENSIME plugin for your [build tool](/build_tools)
 1. Add ensime-vim to your plugin manager of choice in your `.vimrc` (or `init.vim` for Neovim):
 
     Plugin Manager                                    | Your .{n}vimrc
     --------------------------------------------------|-------------------------------
     [Vim-Plug](https://github.com/junegunn/vim-plug)  | `Plug 'ensime/ensime-vim'`
+                                                      | `Plug 'ensime/ensime-vim', { 'do': ':UpdateRemotePlugins' } # if Neovim`
     [Vundle](https://github.com/VundleVim/Vundle.vim) | `Plugin 'ensime/ensime-vim'`
     
    Under the hood this is just another Vim plugin, so other plugin managers should work great as well.
 1. Install the [vim-scala] plugin for Scala filetype detection and highlighting. Optionally, install [Syntastic] as well for syntax checking integrated with ENSIME. Instructions for both plugins can be found in their respective documentation.
-1. Trigger the plugin installations after updating your configuration. With `vim-plug` this is done by executing `:PlugInstall`. With `Vundle` run `:PluginInstall`. For Neovim, you must finally run `:UpdateRemotePlugins` after the installation.
+1. Trigger the plugin installations after updating your configuration. With `vim-plug` this is done by executing `:PlugInstall`. With `Vundle` run `:PluginInstall`.
 
 ##### Post-Install Config
 
@@ -57,3 +73,5 @@ Depending on your preferences, you may want to add some of the following to your
 [Syntastic]: https://github.com/scrooloose/syntastic
 [webbrowser module]: https://docs.python.org/2/library/webbrowser.html
 [browser-script]: https://github.com/ensime/ensime-vim/pull/226#issuecomment-207468659
+[nix]: https://nixos.org/nixpkgs/manual/#sec-modify-via-packageOverrides
+[nixPackageOverrides]: https://nixos.org/nixpkgs/manual/#sec-modify-via-packageOverrides
