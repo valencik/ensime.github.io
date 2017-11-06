@@ -37,9 +37,10 @@ Then in order to create the `.ensime` file for you project, start `sbt` (in the 
 The latest stable release of the server is downloaded by default. If you wish to follow the *unstable* (continuously released) server, add the following to `~/.sbt/0.13/global.sbt`
 
 ```scala
+import org.ensime.EnsimeCoursierKeys._
 import org.ensime.EnsimeKeys._
 
-ensimeRepositoryUrls += "https://oss.sonatype.org/content/repositories/snapshots/"
+ensimeRepositoryUrls in ThisBuild += "https://oss.sonatype.org/content/repositories/snapshots/"
 ensimeServerVersion in ThisBuild := "3.0.0-SNAPSHOT"
 ensimeProjectServerVersion in ThisBuild := "3.0.0-SNAPSHOT"
 ```
