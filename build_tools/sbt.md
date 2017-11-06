@@ -157,7 +157,7 @@ Bug reports in the form of a pull request into the `src/sbt-test/ensime-sbt` dir
 ### Starting the Server
 
 1. Update this plugin and re-run the `.ensime` generator
-1. If that doesn't work: exit `sbt`, clear out the sbt caches and recreate `.ensime`:
+1. If that doesn't work: exit `sbt`, clear out the sbt caches and recreate `.ensime` (change `0.13` by `1.0` if you are using sbt 1.0):
 
 ```
 sbt> exit
@@ -173,10 +173,11 @@ $ sbt
 sbt> ensimeConfig
 ```
 
-If **that** doesn't work, move your ivy folder aside, it has probably become corrupted:
+If **that** doesn’t work, move your ivy and coursier folders aside, the caches have probably become corrupted:
 
 ```
 mv ~/.ivy2 ~/.ivy2.bak
+mv ~/.coursier ~/.coursier.bak
 ```
 
 ### Cancel Processes
