@@ -146,6 +146,12 @@ ensimeServerVersion in ThisBuild := "2.0.0-M2" // or "1.0.1"
 ensimeProjectServerVersion in ThisBuild := "2.0.0-M2" // or "1.0.1"
 ```
 
+to not download javadocs (who writes them anyway?)
+
+```scala
+transitiveClassifiers := Seq("sources")
+```
+
 ## Troubleshooting
 
 Always check the [tickets flagged as FAQ](https://github.com/ensime/ensime-sbt/issues?q=label%3AFAQ) before reporting a new issue.
