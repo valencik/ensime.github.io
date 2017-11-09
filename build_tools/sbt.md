@@ -21,7 +21,7 @@ Therefore it is recommended to install it as a [global plugin](http://www.scala-
 To do so, add it to `~/.sbt/1.0/plugins/plugins.sbt` (create if necessary) as such:
 
 ```scala
-addSbtPlugin("org.ensime" % "sbt-ensime" % "2.0.1")
+addSbtPlugin("org.ensime" % "sbt-ensime" % "2.1.0")
 ```
 
 Then in order to create the `.ensime` file for you project, start `sbt` (in the terminal or your editor's `sbt` mode) and run the `ensimeConfig` command.
