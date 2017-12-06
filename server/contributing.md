@@ -75,28 +75,11 @@ Setting up `sbt` and `jenv` is documented in [Learning Scala](/learning_scala).
 - without `jenv` the tests will fail to pass: we require more knowledge about JDK than typical projects.
 - you must install the JDK sources (`src.zip`) with your OS package manager.
 
-Before you start, run this sbt command on your `ensime-server` repository as the `.ensime` file is required by the integration tests (even if you are not using ENSIME to hack on ENSIME).
+`ensime-server` has both unit tests and integration tests, both can be run with `sbt tests`.
 
-```
-sbt ensimeConfig
-```
+Before running the integration tests you must run `sbt prep` to build an assembly jar and generate an index cache. This must be repeated if you change anything that will impact the indexing.
 
-Don't forget to compile the integration tests as well as the tests, e.g.
-
-```
-sbt test:compile it:compile
-```
-
-The integration tests will be very slow unless you generate a cache.
-
-
-```
-cd testing/cache && sbt ++2.12.2 ensimeConfig ensimeServerIndex && cd ../..
-```
-
-This must be repeated if you change anything that will impact the indexing (e.g. anything in `SearchService` or its dependencies).
-
-The `.drone.yml` file documents the exact commands that we use during our CI and should serve as a good reference.
+The `.drone.yml` file documents the exact commands that we use during our CI and should serve as a good reference. Our CI resources are very limited so please do an `sbt ci` before pushing.
 
 ### Implementing a Feature or Bugfix
 
